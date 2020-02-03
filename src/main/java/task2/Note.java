@@ -1,5 +1,7 @@
 package task2;
 
+import java.util.Date;
+
 import com.opencsv.bean.CsvBindByName;
 
 public class Note {
@@ -21,7 +23,6 @@ public class Note {
 	}
 	
 	public Note(String head, String date, String email, String text) {
-		super();
 		this.head = head;
 		this.date = date;
 		this.email = email;

@@ -1,6 +1,8 @@
 package task2;
 
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Console {
 	private static Console instance;
@@ -33,6 +35,18 @@ public class Console {
 		number = scanner.nextInt();
 		scanner.nextLine();                // сьедает перевод на новую строку. Иначе следующее чтение строки забагует
 		return number;
+	}
+	
+	public String nextEmail() {
+		System.out.print(">> ");
+		String email = scanner.nextLine();
+		Pattern pattern = Pattern.compile("[^@]+@[^@]+\\.[^@]+"); //данная проверка не 100%. Нужно отсылать подтверждение на почту
+		while (!pattern.matcher(email).matches()) {
+			System.out.println("Некорректный e-mail. Введите другой.");
+			System.out.print(">> ");
+			email = scanner.nextLine();
+		}
+		return email;
 	}
 	
 

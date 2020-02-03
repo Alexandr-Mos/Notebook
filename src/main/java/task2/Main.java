@@ -1,5 +1,10 @@
 package task2;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /*Задание 2. Блокнот. Разработать консольное приложение, работающее с Заметками
 в Блокноте. Каждая Заметка это: Заметка (тема, дата создания, e-mail, сообщение).
 Общие пояснения к практическому заданию.
@@ -17,12 +22,30 @@ package task2;
 public class Main {
 
 	public static void main(String[] args) {
-		FileManager fileManager = new FileManager("D:\\test", Notebook.FILE_NAME);
-		Notebook notebook = new Notebook();
-		notebook.setNotes(fileManager.readFile());
-		notebook.addNote(new Note("делать 3 задачу", "Воскресенье", "digger_sasha@mail.ru", "Задачи нужно сделать как можно раньше"));
+		Console console = Console.getInstance();
+		System.out.println("Введите путь к каталогу ");
+		String command = console.nextCommand();
+		Notebook notebook = new Notebook(command);
+		notebook.initialize();
+		
+		//http://proglang.su/java/date-and-time
+		Date date = new Date(System.currentTimeMillis());
+		System.out.println(date);
+		SimpleDateFormat df = new SimpleDateFormat("E kk:mm:ss z dd.MM.yyyy");
+		System.out.println(df.format(date));
+		
+			try {
+				System.out.println(df.parse("Пн 11:28:57 MSK 03.02.2020"));
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		notebook.addNote();
 		System.out.println(notebook.getNotes());
-		fileManager.writeFile(notebook);;
+		
+		
+		
+		notebook.close();
 	}
-	
+
 }
