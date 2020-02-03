@@ -22,30 +22,65 @@ import java.util.Date;
 public class Main {
 
 	public static void main(String[] args) {
+		System.out.println("~ЗАМЕТКИ~");
 		Console console = Console.getInstance();
-		System.out.println("Введите путь к каталогу ");
+		System.out.print("Введите путь к каталогу ");
 		String command = console.nextCommand();
 		Notebook notebook = new Notebook(command);
 		notebook.initialize();
 		
-		//http://proglang.su/java/date-and-time
+		System.out.println("~Добро пожаловать!~");
+		System.out.println("~Введите [help] для получения полного списка комманд~");
+		
+		while(!command.equals("exit")) {
+			System.out.print("Введите команду ");
+			command = console.nextCommand().toLowerCase();
+			switch (command) {
+				case "print":
+					notebook.print();
+					break;
+				case "add":
+					notebook.addNote();
+					break;
+				case "findbyheader":
+					notebook.findByHeader();
+					break;
+				case "findbydate":
+					notebook.findByDate();
+					break;
+				case "findbyemail":
+					notebook.findByEmail();
+					break;
+				case "findbytext":
+					notebook.findByText();
+					break;
+				case "exit":
+					continue;
+				default:
+					System.out.println("~Такой команды не существует~");
+					break;
+			}
+		}
+		
+		notebook.close();
+		
+		/*// http://proglang.su/java/date-and-time
 		Date date = new Date(System.currentTimeMillis());
 		System.out.println(date);
 		SimpleDateFormat df = new SimpleDateFormat("E kk:mm:ss z dd.MM.yyyy");
 		System.out.println(df.format(date));
-		
-			try {
-				System.out.println(df.parse("Пн 11:28:57 MSK 03.02.2020"));
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
+		try {
+			System.out.println(df.parse("Пн 11:28:57 MSK 03.02.2020"));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		notebook.addNote();
-		System.out.println(notebook.getNotes());
+		System.out.println(notebook.getNotes());*/
+
 		
 		
-		
-		notebook.close();
 	}
 
 }

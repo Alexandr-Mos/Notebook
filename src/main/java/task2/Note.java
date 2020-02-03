@@ -1,7 +1,5 @@
 package task2;
 
-import java.util.Date;
-
 import com.opencsv.bean.CsvBindByName;
 
 public class Note {
@@ -63,7 +61,7 @@ public class Note {
 
 	@Override
 	public String toString() {
-		return head + "," + date + "," + email + "," + text;
+		return head + "\n" + date + ", " + email + "\n" + text;
 	}
 
 }
