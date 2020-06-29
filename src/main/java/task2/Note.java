@@ -61,7 +61,10 @@ public class Note {
 
 	@Override
 	public String toString() {
-		return head + "\n" + date + ", " + email + "\n" + text;
+		return "Заголовок: " + head + "\n" + 
+			   "Дата: " + date + "\n" +
+			   "email: " + email + "\n" + 
+			   "Текст: " + text;
 	}
 
 }

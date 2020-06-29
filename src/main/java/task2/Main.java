@@ -36,6 +36,9 @@ public class Main {
 			System.out.print("Введите команду ");
 			command = console.nextCommand().toLowerCase();
 			switch (command) {
+			    case "help":
+			    	notebook.printHelp();
+			    	break;
 				case "print":
 					notebook.print();
 					break;

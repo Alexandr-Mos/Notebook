@@ -9,8 +9,16 @@ public class Notebook {
 	private Console console;
 	private FileManager fileManager;
 	private String catalog;
-	public static String FILE_NAME = "notes.txt";
-	
+	public static final String FILE_NAME = "notes.csv";
+	private static final String HELP = "Список команд:\n" +
+			"-[help] - вывести список коман\n" + 
+			"-[print] - вывести все заметки\n" + 
+			"-[add] - добавить заметку\n" + 
+			"-[findbyheader] - найти заметки по заголовку\n" + 
+			"-[findbydate] - найти заметки по дате\n" + 
+			"-[findbyemail] - найти заметки по email-у\n" + 
+			"-[findbytext] - найти заметки по текту содержания\n" + 
+			"-[exit] - выйти из программы";
 	
 	public Notebook(String catalog) {
 		this.catalog = catalog;
@@ -35,7 +43,12 @@ public class Notebook {
 		System.out.println("~Список всех заметок~");
 		for(Note n : notes) {
 			System.out.println(n);
+			System.out.println("/--------------------------------------/");
 		}
+	}
+	
+	public void printHelp() {
+		System.out.println(HELP);
 	}
 	
 	public void findByHeader() {
