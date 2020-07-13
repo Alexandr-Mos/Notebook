@@ -1,4 +1,4 @@
-package task2;
+package my.home.task2;
 
 import java.io.File;
 import java.io.FileReader;
@@ -28,7 +28,7 @@ public class FileManager {
 			try {
 				notesFile.createNewFile();
 			} catch (IOException e) {
-				// e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 		return directory.exists() && notesFile.exists();

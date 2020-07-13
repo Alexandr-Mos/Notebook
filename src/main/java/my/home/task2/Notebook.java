@@ -1,6 +1,5 @@
-package task2;
+package my.home.task2;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -102,7 +101,7 @@ public class Notebook {
 	
 	public void addNote() {
 		Note note = new Note();
-		System.out.print("Введите тему");
+		System.out.print("Введите заголовок");
 		note.setHead(console.nextCommand());
 		System.out.print("Введите e-mail");
 		note.setEmail(console.nextEmail());

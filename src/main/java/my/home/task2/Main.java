@@ -1,9 +1,4 @@
-package task2;
-
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+package my.home.task2;
 
 /*Задание 2. Блокнот. Разработать консольное приложение, работающее с Заметками
 в Блокноте. Каждая Заметка это: Заметка (тема, дата создания, e-mail, сообщение).
@@ -19,6 +14,7 @@ import java.util.Date;
 осуществлять с использованием регулярных выражений.
 	• Особое условие: проверку введенной информации на валидность должен
 осуществлять код, непосредственно добавляющий информацию.*/
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -65,24 +61,8 @@ public class Main {
 			}
 		}
 		
+		System.out.println("~Всего доброго! Завершаю работу...~");
 		notebook.close();
-		
-		/*// http://proglang.su/java/date-and-time
-		Date date = new Date(System.currentTimeMillis());
-		System.out.println(date);
-		SimpleDateFormat df = new SimpleDateFormat("E kk:mm:ss z dd.MM.yyyy");
-		System.out.println(df.format(date));
-
-		try {
-			System.out.println(df.parse("Пн 11:28:57 MSK 03.02.2020"));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		notebook.addNote();
-		System.out.println(notebook.getNotes());*/
-
-		
 		
 	}
 
