@@ -1,4 +1,4 @@
-# module6-task2-notebook
+# task2-notebook
 
 **Решение задачи из 6-го модуля _Java Online Training_**
 
