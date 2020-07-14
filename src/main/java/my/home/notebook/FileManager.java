@@ -1,4 +1,4 @@
-package my.home.task2;
+package my.home.notebook;
 
 import java.io.File;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package my.home.task2;
+package my.home.notebook;
 
 import java.util.Date;
 import java.util.List;

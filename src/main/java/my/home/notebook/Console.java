@@ -1,4 +1,4 @@
-package my.home.task2;
+package my.home.notebook;
 
 import java.util.Scanner;
 import java.util.regex.Pattern;
